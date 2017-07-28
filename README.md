@@ -4,6 +4,7 @@ Attaching javascript functions to HTTP endpoints with no configuration
 ## Installation
 ```
 git clone https://github.com/jstillerman/sheep
+cd sheep
 npm install -g . 
 ```
 ## Usage
