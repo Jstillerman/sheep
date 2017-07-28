@@ -25,7 +25,7 @@ function explore(newpath){
 
 function register(path, fn, settings) {
   console.log("Registering", path+getRestOfPath(settings));
-  app.get(path+getRestOfPath(settings), function(req, res) {
+  app.all(path+getRestOfPath(settings), function(req, res) {
     req.urlArgs = Object.values(req.params)
     res.send(fn(req))
   })
@@ -39,11 +39,6 @@ function getRestOfPath(settings){
   }
   return path
 }
-
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
-
 
 var basepath = process.cwd()+"/"+process.argv[2]
 explore("")
